@@ -26,3 +26,28 @@ if( temp>30)
    data mens "alerta" lonSen latSen
    send mens ant
 end
+
+set ite 0
+battery set 100
+
+
+inc ite
+print ite
+if (ite >= 1000)
+	stop
+end
+
+if (tipo=="stop")
+	data mens "stop"
+	send mens * valor
+	cprint "Para sensor: " id
+	wait 1000
+	stop
+end
+
+
+battery bat
+if(bat<5)
+	data mens "critico" lonSen latSen
+	send mens ant
+end
